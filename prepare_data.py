@@ -15,7 +15,7 @@ df_public, df_private = train_test_split(df, test_size=0.7, random_state=57, str
 # 4 - Split public train/test subsets. 
 
 df_public_train, df_public_test = train_test_split(
-    df_public, test_size=0.2, random_state=57)
+    df_public, test_size=0.2, random_state=57, stratify=df_public['select_form'])
     # specify the random_state to ensure reproducibility
 
 # Define the directory path
@@ -39,7 +39,7 @@ if not os.path.exists(private_path):
     os.makedirs(private_path)
 
 df_private_train, df_private_test = train_test_split(
-    df_private, test_size=0.2, random_state=57)
+    df_private, test_size=0.2, random_state=57, stratify=df_private['select_form'])
     # specify the random_state to ensure reproducibility
 df_private_train.to_csv(os.path.join(private_path, 'train.csv'), index=False)
 df_private_test.to_csv(os.path.join(private_path, 'test.csv'), index=False)
