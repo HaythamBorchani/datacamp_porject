@@ -4,13 +4,12 @@ import os
 
 
 # 1 - read in or download the data.
-df = pd.read_csv(os.path.join('data','dataset.csv'))
-
+df = pd.read_csv(os.path.join('data','fr-esr-parcoursup.csv'),sep=';')
 # 2 - Perform any data cleaning and split into private train/test subsets,
 # if required. Neither steps required in this case.
 
 # 3 - Split Public/Private data.
-df_public, df_private = train_test_split(df, test_size=0.7, random_state=57)
+df_public, df_private = train_test_split(df, test_size=0.7, random_state=57, stratify=df['select_form'])
     # specify the random_state to ensure reproducibility
 
 # 4 - Split public train/test subsets. 
