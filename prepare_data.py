@@ -65,7 +65,7 @@ keys_to_keep = grouped_sorted[grouped_sorted['count'] >= 5]['stratify_key']
 df_filtered = df[df['stratify_key'].isin(keys_to_keep)]
 
 # 5 - Split Public/Private data.
-df_public, df_private = train_test_split(df_filtered, test_size=0.7, random_state=57, stratify=df_filtered['stratify_key'])    # specify the random_state to ensure reproducibility
+df_public, df_private = train_test_split(df_filtered, test_size=0.3, random_state=57, stratify=df_filtered['stratify_key'])    # specify the random_state to ensure reproducibility
 
 # 4 - Split public train/test subsets. 
 
