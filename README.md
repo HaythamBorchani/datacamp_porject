@@ -1,6 +1,6 @@
 # RAMP starting-kit on Selectivity classification of higher education programs in France
 
-Authors : Hela MHIRI, Mahdi ATTIA, Wadhah DAHOUATHI, Sami ELMOKH, Haytham BORCHANI
+Authors : Hela MHIRI, Mahdi ATTIA, Mohamed Wadhah DAHOUATHI, Sami ELMOKH, Haytham BORCHANI
 
 
 ## Getting started
