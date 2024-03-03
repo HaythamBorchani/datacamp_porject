@@ -74,7 +74,7 @@ df_public_train, df_public_test = train_test_split(
     # specify the random_state to ensure reproducibility
 
 # Define the directory path
-public_path = 'data\\public'
+public_path = 'data/public'
 
 # Check if the directory exists, if not, create it
 if not os.path.exists(public_path):
