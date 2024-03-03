@@ -4,12 +4,12 @@ import rampwf as rw
 from sklearn.model_selection import StratifiedShuffleSplit
 
 problem_title = 'Selectivity of higher education programs in France'
-_target_column_name = 'select_form'
+_target_column_name = 'selectivity'
 _ignore_column_names = ['session']
-_prediction_label_names = ["formation non sélective", "formation sélective"]
+_prediction_label_names = ["peu selective", "selective", "tres selective"]
 
-cat_to_int = {'formation sélective': 1, 'formation non sélective': 0}
-int_to_cat = {1: 'formation sélective', 0: 'formation non sélective'}
+cat_to_int = {'peu selective': 0, 'selective': 1, 'tres selective': 2}
+int_to_cat =   {0: 'peu selective', 1: 'selective', 2: 'tres selective'}
 
 _prediction_label_int = [cat_to_int[cat] for cat in _prediction_label_names]
 
@@ -21,7 +21,6 @@ workflow = rw.workflows.Classifier()
 
 score_types = [
     rw.score_types.BalancedAccuracy(name='bal_acc', precision=3, adjusted=False),
-    rw.score_types.ROCAUC(name='auc', precision=3),
     rw.score_types.Accuracy(name='acc', precision=3),
 ]
 

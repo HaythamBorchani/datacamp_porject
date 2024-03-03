@@ -10,7 +10,6 @@ class Classifier(BaseEstimator):
         self.transformer = Pipeline(
             steps=[
                 ("imputer", SimpleImputer(strategy="median")),
-                ("scaler", StandardScaler()),
             ]
         )
         self.model = LogisticRegression(max_iter=500)
