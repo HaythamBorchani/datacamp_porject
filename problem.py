@@ -4,12 +4,12 @@ import rampwf as rw
 from sklearn.model_selection import StratifiedShuffleSplit
 
 problem_title = 'Selectivity of higher education programs in France'
-_target_column_name = 'selectivity'
-_ignore_column_names = ['session']
-_prediction_label_names = ["peu selective", "selective", "tres selective"]
+_target_column_name = 'selectivity_category'
+_ignore_column_names = []
+_prediction_label_names = ["Très sélective", "Peu sélective", "Non sélective"]
 
-cat_to_int = {'peu selective': 0, 'selective': 1, 'tres selective': 2}
-int_to_cat =   {0: 'peu selective', 1: 'selective', 2: 'tres selective'}
+cat_to_int = {'Très sélective': 2, 'Peu sélective': 1, 'Non sélective': 0}
+int_to_cat = {2: 'Très sélective', 1: 'Peu sélective', 0: 'Non sélective'}
 
 _prediction_label_int = [cat_to_int[cat] for cat in _prediction_label_names]
 
@@ -21,6 +21,7 @@ workflow = rw.workflows.Classifier()
 
 score_types = [
     rw.score_types.BalancedAccuracy(name='bal_acc', precision=3, adjusted=False),
+    rw.score_types.ROCAUC(name='auc', precision=3),
     rw.score_types.Accuracy(name='acc', precision=3),
 ]
 
@@ -37,11 +38,11 @@ def _read_data(path, f_name):
     return X_df, y_array
 
 
-def get_train_data(path='.\\data\\public'):
+def get_train_data(path='./data/public'):
     f_name = 'train.csv'
     return _read_data(path, f_name)
 
 
-def get_test_data(path='.\\data\\public'):
+def get_test_data(path='./data/public'):
     f_name = 'test.csv'
     return _read_data(path, f_name)
