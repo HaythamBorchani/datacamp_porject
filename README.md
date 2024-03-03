@@ -20,7 +20,7 @@ usage.
 
 ### Challenge description
 
-Get started with the [dedicated notebook](selectivity_starting_kit.ipynb)
+Get started with the [dedicated notebook](starting_kit_selectivity_.ipynb)
 
 
 ### Test a submission
