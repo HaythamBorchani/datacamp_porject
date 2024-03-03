@@ -21,7 +21,6 @@ workflow = rw.workflows.Classifier()
 
 score_types = [
     rw.score_types.BalancedAccuracy(name='bal_acc', precision=3, adjusted=False),
-    rw.score_types.ROCAUC(name='auc', precision=3),
     rw.score_types.Accuracy(name='acc', precision=3),
 ]
 
