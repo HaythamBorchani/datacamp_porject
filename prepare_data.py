@@ -34,7 +34,7 @@ def categorize_by_access_rate(row, high_threshold):
         if row['taux_acces_ens'] > high_threshold:
             return 'Peu sélective'
         else:
-            return 'Très sélective":'
+            return 'Très sélective'
     else:
         # Handle cases where 'select_form' is not 0, 1, or NaN, if necessary
         return 'unknown'
