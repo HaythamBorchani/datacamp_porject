@@ -34,7 +34,7 @@ def categorize_by_access_rate(row, high_threshold):
         if row['taux_acces_ens'] > high_threshold:
             return 'Peu sélective'
         else:
-            return 'Très sélective":'
+            return 'Très sélective'
     else:
         # Handle cases where 'select_form' is not 0, 1, or NaN, if necessary
         return 'unknown'
@@ -74,7 +74,7 @@ df_public_train, df_public_test = train_test_split(
     # specify the random_state to ensure reproducibility
 
 # Define the directory path
-public_path = 'data\\public'
+public_path = 'data/public'
 
 # Check if the directory exists, if not, create it
 if not os.path.exists(public_path):
