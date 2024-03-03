@@ -1,0 +1,11 @@
+name: selectivity_classification
+channels:
+  - defaults
+dependencies:
+  - numpy
+  - pandas
+  - matplotlib
+  - scikit-learn
+  - seaborn
+  - pip:
+    - ramp-workflow
