@@ -17,12 +17,10 @@ class Classifier(BaseEstimator):
 
     def fit(self, X, y):
         X = X.select_dtypes(include="number")
-        print(y)
         self.pipe.fit(X, y)
 
     def predict(self, X):
         X = X.select_dtypes(include="number")
-        print(self.pipe.predict(X))
         return self.pipe.predict(X)
 
     def predict_proba(self, X):
